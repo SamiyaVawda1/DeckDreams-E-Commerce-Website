@@ -3,7 +3,7 @@ DeckDreams - E-commerce Website
 
 Overview and Purpose
 -------------------------------
-DeckDreams is an e-commerce website that allows users to view and purchase skateboards. The website has a unique, fun and seamless design that matches the product being sold. All payments are simulated as this is not a production-ready project as yet, I made this website to practice and enhance my web development skills.
+DeckDreams is an e-commerce website that allows users to view and purchase skateboards. The website has a unique, fun and seamless design that matches the products being sold. All payments are simulated as this is not a production-ready project as yet, I made this website to practice and enhance my web development skills.
 
 -------------------------------
 Prerequisites
