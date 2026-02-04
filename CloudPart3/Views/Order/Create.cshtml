@@ -1,0 +1,34 @@
+﻿@model CloudPart3.Models.Order
+
+@{
+    ViewData["Title"] = "Create Order page";
+}
+
+<form asp-controller="Order" asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label>Delivery Address</label>
+        <input asp-for="orderAddress" class="form-control" />
+        <span asp-validation-for="orderAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Payment method</label>
+        <select asp-for="paymentMethod" class="form-control">
+            <option value="">Select a payment method</option> 
+            <option value="Credit card">Credit card</option>
+            <option value="Debit card">Debit card</option>
+            <option value="EFT">EFT</option>
+        </select>
+        <span asp-validation-for="paymentMethod" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Checkout</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

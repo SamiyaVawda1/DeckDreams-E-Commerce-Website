@@ -1,0 +1,139 @@
+﻿@model IEnumerable<CloudPart3.Models.Cart>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <h2 class="pleaseLoginDisplay">Please log in to view cart</h2>
+}
+else
+{
+    <h1 class="cartHeading">Cart</h1>
+    <br>
+
+    @if (Model == null || !Model.Any())
+    {
+        <p class="cartEmptyText">Your cart is empty. Head over to the skateboards page to add something to your cart!</p>
+    }
+    else
+    {
+        <div id="message" style="display:none;" class="alert"></div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="cart-item-@item.productID">
+                        <td>
+                            <img src="@item.ImageURL" alt="@item.productName" style="width: 100px; height: auto;" />
+                            <p>@item.productName</p>
+                        </td>
+                        <td>R @item.productPrice</td>
+                        <td>
+                            <input type="number" class="quantity-input" data-product-id="@item.productID" value="@item.Quantity" min="1" />
+                            <button class="update-quantity-btn" data-product-id="@item.productID">Update</button>
+                        </td>
+                        <td>R @(item.productPrice * item.Quantity)</td>
+                        <td>
+                            <button class="remove-item-btn" data-product-id="@item.productID">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h3 class="subTotalText">Subtotal: R <span id="subtotal">@ViewBag.Subtotal</span></h3>
+        <button class="btnCheckout" onclick="directToCheckout()">Proceed to checkout</button>
+    }
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //update quantity
+        $(".update-quantity-btn").on("click", function (e) {
+            e.preventDefault();
+            var productId = $(this).data("product-id");
+            var quantity = $(this).closest("td").find(".quantity-input").val();
+
+            $.ajax({
+                url: '@Url.Action("UpdateQuantity", "Cart")',
+                type: 'POST',
+                data: { productId: productId, quantity: quantity },
+                success: function (response) {
+                    if (response.success) {
+                        showMessage(response.message, "success");
+                        updateSubtotal();
+                    } else {
+                        showMessage(response.message, "error");
+                    }
+                },
+                error: function () {
+                    showMessage("An error occurred while updating the quantity.", "error");
+                }
+            });
+        });
+
+        //remove item
+        $(".remove-item-btn").on("click", function (e) {
+            e.preventDefault();
+            var productId = $(this).data("product-id");
+
+            $.ajax({
+                url: '@Url.Action("RemoveFromCart", "Cart")',
+                type: 'POST',
+                data: { productId: productId },
+                success: function (response) {
+                    if (response.success) {
+                        $("#cart-item-" + productId).remove();
+                        showMessage(response.message, "success");
+                        updateSubtotal();
+                    } else {
+                        showMessage(response.message, "error");
+                    }
+                },
+                error: function () {
+                    showMessage("An error occurred while removing the item.", "error");
+                }
+            });
+        });
+
+        // Show feedback message
+        function showMessage(message, type) {
+            var messageDiv = $("#message");
+            messageDiv.text(message).removeClass("alert-success alert-error");
+
+            if (type === "success") {
+                messageDiv.addClass("alert-success");
+            } else if (type === "error") {
+                messageDiv.addClass("alert-error");
+            }
+
+            messageDiv.show();
+            setTimeout(function () {
+                messageDiv.hide();
+            }, 3000);
+        }
+
+        // Update subtotal dynamically
+        function updateSubtotal() {
+            $.ajax({
+                url: '@Url.Action("Index", "Cart")',
+                type: 'GET',
+                success: function (data) {
+                    var parser = new DOMParser();
+                    var htmlDoc = parser.parseFromString(data, "text/html");
+                    var newSubtotal = $(htmlDoc).find("#subtotal").text();
+                    $("#subtotal").text(newSubtotal);
+                }
+            });
+        }
+    });
+</script>

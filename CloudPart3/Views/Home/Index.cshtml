@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CloudPart3.Models.Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="readyToShredTitle">Ready to shred?</h1>
+
+<!--For the video, looped and plays immediately. And fetched from Blob Storage If browser does not support the video tag, display message-->
+<video class="homePageVideo" autoplay loop muted playsinline>
+    <source src="https://samiyavawdastorage.blob.core.windows.net/videos/SkateVideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<p class="readyToShredParagraph">
+    We celebrate the art of skateboarding, a
+    delicious mix of adrenaline and creativity
+    and all that good stuff. Our boards are
+    crafted with the same passion that goes into
+    making the perfect sushi roll. We have
+    boards for everyone so feel free to shop our
+    unique collection.
+</p>
+
+<button class="btnAboutUs" alt="About us page navigation" onclick="redirectToAboutPage()">About us</button>
+
+<button class="btnSkateboards" alt="Products page navigation" onclick="redirectToProductsPage()">Skateboards</button>
+
+<div class="homeSection2">
+    <h1 class="homeSkateboardTitle">Our Collection</h1>
+    <br>
+    <!-- Display the selected products in cards -->
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@product.ImageURL" class="card-img-top" alt="@product.productName" style="height: 550px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.productName</h5>
+                        <p class="card-text">@product.productDescription</p>
+                        <p class="card-text"><strong>Price: R @product.productPrice</strong></p>
+                        <button onclick="redirectToProductsPage()" class="btnViewDetails">View details</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="homeSection3">
+    <div class="section3SubSection">
+        <br>
+        <h1 class="subSectionHeading">Support your local business</h1>
+        <p class="subSectionText">
+            All of our products are sustainably sourced
+            and we can always guarantee that.
+
+            By carefully selecting eco-friendly
+            wood and working with suppliers who
+            prioritize responsible forestry, we’re
+            committed to preserving our planet for
+            future generations of skaters.
+        </p>
+        <img src="https://samiyavawdastorage.blob.core.windows.net/images/HomePicture1.png" alt="Frog board" class="homeImage1" />
+    </div>
+    <button class="btnMoreAboutUs" onclick="redirectToAboutPage()">More about us</button>
+</div>

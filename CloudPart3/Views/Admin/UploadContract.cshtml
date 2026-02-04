@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Upload User Agreement Contract Page";
+}
+
+<h1>Welcome, admin</h1>
+<h2>Here you can upload updated User Agreement Contracts</h2>
+
+<br>
+
+<form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="contractFile">Select a file:</label>
+        <input type="file" name="contractFile" />
+    </div>
+    <button class="btnUploadAgreementContract" type="submit">Upload</button>
+</form>
+
+<br>
+
+<h2>Here you can upload updated Supplier contract agreements regarding products</h2>
+
+<form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="contractFile">Select a file:</label>
+        <input type="file" name="contractFile" />
+    </div>
+    <button class="btnUploadAgreementContract" type="submit">Upload</button>
+</form>
+
+<br>
+
+<h2>Here you can upload updated Order receipt contracts regarding user orders</h2>
+
+<form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="contractFile">Select a file:</label>
+        <input type="file" name="contractFile" />
+    </div>
+    <button class="btnUploadAgreementContract" type="submit">Upload</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}

@@ -1,0 +1,830 @@
+html {
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: 'Expressa';
+    src: url('/fonts/Expressa Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Expressa';
+    src: url('/fonts/Expressa Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #EADEAE;
+    color: #060604;
+    font-family: 'Expressa', sans-serif;
+    font-size: 20px;
+}
+
+.h1 {
+    font-family: 'Expressa';
+    font-weight: bold;
+    font-size: 28px;
+}
+
+nav.custom-navbar {
+    background-color: #EADEAE;
+    border-bottom: 1px solid #000000 !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-item {
+    color: #060604;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-family: Expressa;
+    font-weight: bold;
+    margin-right: auto; /*Used this to align the nav items perfectly in the center*/
+}
+
+.nav-link {
+    font-size: 20px;
+    font-family: 'Expressa';
+    font-weight: bold;
+}
+
+/*Home page, section 1*/
+
+.readyToShredTitle {
+    margin-top: 80px;
+    margin-left: -60px;
+    font-family: Expressa;
+    font-weight: bold;
+}
+
+.readyToShredParagraph {
+    margin-left: -92px;
+    margin-top: -20px;
+    white-space: pre-wrap;
+    font-size: 28px;
+}
+
+.btnAboutUs {
+    height: 50px;
+    width: 200px;
+    margin-left: -60px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #F29B14;
+    font-family: Expressa;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+    .btnAboutUs:hover {
+        animation: colorRotate 3s infinite;
+    }
+
+.btnSkateboards {
+    height: 50px;
+    width: 200px;
+    margin-left: 70px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #1BC034;
+    font-family: Expressa;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+    .btnSkateboards:hover {
+        animation: colorRotate 3s infinite;
+    }
+
+@keyframes colorRotate {
+    0% {
+        background-color: purple;
+    }
+
+    25% {
+        background-color: deepskyblue;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    75% {
+        background-color: deeppink;
+    }
+
+    100% {
+        background-color: purple;
+    }
+}
+
+.homePageVideo {
+    position: absolute;
+    width: 820px;
+    height: 800px;
+    margin-top: -235px;
+    margin-left: 560px;
+    z-index: -1;
+}
+
+.containerPicture1 {
+    width: 100%;
+    height: 530px;
+    border-bottom: 1px solid #000000 !important;
+}
+
+.aboutPicture1 {
+    width: 100%;
+    height: 500px;
+}
+
+.ourStoryHeading {
+    font-family: Expressa;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.ourStoryParagraph {
+    margin-top: -10px;
+    margin-left: -32px;
+    white-space: pre-wrap;
+    font-size: 28px;
+}
+
+.containerPicture2 {
+    position: relative;
+    width: 800px;
+    height: 700px;
+    margin-left: 650px;
+    margin-top: -712px;
+    border-left: 1px solid #000000 !important;
+    z-index: 1;
+}
+
+.aboutPicture2 {
+    width: 590px;
+    height: 700px;
+    margin-left: 55px;
+    margin-top: 20px;
+}
+
+.registerHeading {
+    text-align: center;
+    font-weight: bold;
+}
+
+.nameContainer {
+    margin-left: 485px;
+    margin-top: 50px;
+}
+
+.surnameContainer {
+    margin-left: 465px;
+    margin-top: 50px;
+}
+
+.emailContainer {
+    margin-left: 493px;
+    margin-top: 50px;
+}
+
+.passwordContainer {
+    margin-left: 457px;
+    margin-top: 50px;
+}
+
+.btnRegister {
+    width: 300px;
+    height: 50px;
+    margin-left: 500px;
+    margin-top: 100px;
+    background-color: #F29B14;
+    border-radius: 10px;
+}
+
+.btnLogin {
+    width: 300px;
+    height: 50px;
+    margin-left: 500px;
+    margin-top: 110px;
+    background-color: #F29B14;
+    border-radius: 10px;
+}
+
+.txtName {
+    width: 250px;
+    background-color: #EADEAE;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.txtSurname {
+    width: 250px;
+    background-color: #EADEAE;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.txtEmail {
+    width: 250px;
+    background-color: #EADEAE;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.txtPassword {
+    width: 250px;
+    background-color: #EADEAE;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.loginHeading {
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+}
+
+.loginPageHyperLink {
+    margin-top: -115px;
+    margin-left: 530px;
+}
+
+.registerPageHyperLink {
+    margin-top: -140px;
+    margin-left: 530px;
+}
+
+.productsHeading {
+    text-align: center;
+    font-weight: bold;
+}
+
+.btnAddToCart {
+    background-color: #1BC034;
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+    .btnAddToCart:hover {
+        animation: colorRotate 3s infinite;
+    }
+
+.btn-primary {
+    background-color: #1BC034;
+    width: 100%;
+    height: 40px;
+    color: #060604;
+    font-weight: bold;
+}
+
+    .btn-primary:hover {
+        background-color: #F29B14;
+        border-radius: 5px;
+    }
+
+.btn-warning {
+    width: 100%;
+    font-weight: bold;
+}
+
+    .btn-warning:hover {
+        background-color: darkorange;
+    }
+
+.btn-danger {
+    width: 100%;
+    font-weight: bold;
+    color: black;
+}
+
+.btn-secondary {
+    width: 100%;
+    color: black;
+    font-weight: bold;
+}
+
+.editProductHeading {
+    text-align: center;
+    font-weight: bold;
+}
+
+.addProductHeading {
+    text-align: center;
+    font-weight: bold;
+}
+
+/*Home page, section 2*/
+
+.homeSection2 {
+    width: 1505px;
+    height: 850px;
+    background-color: #eadeae;
+    margin-top: 100px;
+    margin-left: -110px;
+    border-top: 1px solid #000000 !important;
+}
+
+.homeSkateboardTitle {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btnViewDetails {
+    background-color: #1BC034;
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+    .btnViewDetails:hover {
+        animation: colorRotate 3s infinite;
+    }
+
+.homeSection3 {
+    width: 1505px;
+    height: 850px;
+    background-color: #eadeae;
+    margin-top: 100px;
+    margin-left: -110px;
+    border-top: 1px solid #000000 !important;
+    position: relative;
+}
+
+.section3SubSection {
+    width: 770px;
+    height: 850px;
+    background-color: #eadeae;
+    margin-top: 0px;
+    margin-left: -10px;
+    border-right: 1px solid #000000 !important;
+}
+
+.subSectionHeading {
+    text-align: center;
+    font-weight: bold;
+}
+
+.subSectionText {
+    white-space: pre-wrap;
+    text-align: center;
+    font-size: 38px;
+}
+
+.homeImage1 {
+    margin-left: 820px;
+    margin-top: -640px;
+    height: 820px;
+    width: 670px;
+    border-radius: 10px;
+}
+
+.btnMoreAboutUs {
+    position: absolute;
+    margin-top: -100px;
+    bottom: 70px;
+    left: 25%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    height: 60px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #F29B14;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+    .btnMoreAboutUs:hover {
+        animation: colorRotate 3s infinite;
+    }
+
+.text-danger {
+    position: absolute;
+    z-index: -1;
+    margin-left: 50px;
+}
+
+.checkboxPassword {
+    margin-left: 10px;
+}
+
+.pleaseLoginDisplay {
+    font-weight: bold;
+    text-align: center;
+}
+
+.cartHeading {
+    font-weight: bold;
+    text-align: center;
+}
+
+.btnUpdateQuantity {
+    width: 100px;
+    font-weight: bold;
+    color: black;
+    background-color: #F29B14;
+    border-radius: 5px;
+}
+
+.btnCheckout {
+    margin-left: 1100px;
+    top: 85%;
+    transform: translateY(-85%);
+    background-color: #1BC034;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+}
+
+    .btnCheckout:hover {
+        animation: colorRotate 3s infinite;
+    }
+
+.yourOrdersHeading {
+    font-weight: bold;
+    text-align: center;
+}
+
+.cartEmptyText {
+    text-align: center;
+}
+
+.btnUploadAgreementContract {
+    background-color: #1BC034;
+    width: 300px;
+    height: 40px;
+    color: #060604;
+    font-weight: bold;
+}
+
+.aboutContactButton1 {
+    position: absolute;
+    width: 230px;
+    height: 50px;
+    top: 42%;
+    left: 76.8%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /*to overlap the button with the GIF*/
+    border-radius: 0px;
+    cursor: pointer;
+    background-color: ghostwhite;
+    font-family: Expressa;
+    font-size: 20px;
+    transition: border-radius 0.5s ease;
+    border: none;
+}
+
+    .aboutContactButton1:hover {
+        border-radius: 30px;
+    }
+
+/*Animated text in contact us page*/
+.contactUsHeading2 {
+    margin-left: 416px;
+    font-size: 40px;
+    padding: 0;
+    background-color: #EADEAE;
+    color: #f29b14;
+    display: flex;
+    font-family: Expressa;
+}
+
+.animatedContact-text {
+    font-family: Expressa;
+    font-weight: bold;
+}
+
+    .animatedContact-text span {
+        position: relative;
+    }
+
+        .animatedContact-text span::before {
+            content: "Question?";
+            color: #1BC034;
+            animation: wordsContact 20s infinite;
+        }
+
+        .animatedContact-text span::after {
+            content: "";
+            position: absolute;
+            width: calc(100% + 100px);
+            height: 120%;
+            background-color: #EADEAE;
+            border-left: 2px solid #007BB8;
+            right: -8px;
+            animation: cursor .8s infinite, typingContact 20s steps(23) infinite;
+        }
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes wordsContact {
+    0%, 20% {
+        content: "Question?";
+    }
+
+    21%, 40% {
+        content: "Compliment?";
+    }
+
+    41%, 60% {
+        content: "Compliant?";
+    }
+
+    61%, 80% {
+        content: "Topic to discuss?";
+    }
+
+    81%, 100% {
+        content: "Recommendation?";
+    }
+}
+
+@keyframes typingContact {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+
+.contactBox-container {
+    display: flex;
+    justify-content: left; /*center contact box's horizontally*/
+    margin-left: 60px;
+    margin-top: -55px;
+}
+
+.contactEmailBox {
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+    width: 350px;
+    background-color: #F29B14;
+    font-family: Expressa;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 70px;
+}
+
+.contactPhoneBox {
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+    width: 350px;
+    background-color: #F29B14;
+    font-family: Expressa;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 70px;
+}
+
+.contactAssistanceBox {
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+    width: 350px;
+    background-color: #F29B14;
+    font-family: Expressa;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 20px;
+}
+
+.contactImage1-style {
+    width: 80px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: -470px;
+}
+
+.contactImage2-style {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-top: -470px;
+}
+
+.contactImage3-style {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-top: -470px;
+}
+
+.emailText1 {
+    background-color: #F29B14;
+    color: black;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.emailText2 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.emailText3 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.phoneText1 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.phoneText2 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.phoneText3 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.assistText1 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.assistText2 {
+    background-color: #F29B14;
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.contactGIF-style {
+    height: 323px;
+    width: 350px;
+    margin-left: 910px;
+    margin-top: -950px;
+}
+
+.contactEmailButton {
+    position: absolute;
+    top: 530px;
+    left: 23.2%;
+    transform: translateX(-50%);
+    width: 352px;
+    height: 50px;
+    font-family: Expressa;
+    font-size: 30px;
+    color: black;
+    background-color: #1BC034;
+}
+
+.contactSupportButton {
+    position: absolute;
+    top: 530px;
+    left: 77.8%;
+    transform: translateX(-50%);
+    width: 352px;
+    height: 50px;
+    font-family: Expressa;
+    font-size: 30px;
+    color: black;
+    background-color: #1BC034;
+}
+
+.contactUsHeading1 {
+    text-align: center;
+    font-family: Expressa;
+    font-weight: bold;
+}
+
+.sectionFooter {
+    width: 1505px;
+    height: 400px;
+    transition: background-color 0.5s ease;
+    margin-top: 30px;
+    margin-left: -110px;
+    border-top: 1px solid #000000 !important;
+    position: relative;
+    animation: colorRotate2 12s infinite;
+}
+
+@keyframes colorRotate2 {
+    0% {
+        background-color: purple;
+    }
+
+    20% {
+        background-color: mediumpurple;
+    }
+
+    30% {
+        background-color: gold;
+    }
+
+    40% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: cornflowerblue;
+    }
+
+    60% {
+        background-color: deepskyblue;
+    }
+
+    70% {
+        background-color: green;
+    }
+
+    80% {
+        background-color: lightgreen;
+    }
+
+    90% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: purple;
+    }
+}
+
+.update-quantity-btn {
+    background-color: #F29B14;
+    border-radius: 5px;    
+}
+
+.remove-item-btn {
+    background-color: #F29B14;
+    border-radius: 5px;
+}

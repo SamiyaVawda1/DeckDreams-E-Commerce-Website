@@ -1,0 +1,43 @@
+﻿@model CloudPart3.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create a New Product</h2>
+
+<!--multipart is important for file uploads that is why I have it there-->
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label>Product name</label>
+        <input asp-for="productName" class="form-control" />
+        <span asp-validation-for="productName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Product description</label>
+        <textarea asp-for="productDescription" class="form-control"></textarea>
+        <span asp-validation-for="productDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Product price</label>
+        <input asp-for="productPrice" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="productPrice" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="imageFile">Product Image</label>
+        <input type="file" class="form-control-file" id="imageFile" name="imageFile" accept="image/*" required />
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Create Product</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

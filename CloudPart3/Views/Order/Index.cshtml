@@ -1,0 +1,35 @@
+﻿@model List<CloudPart3.Models.Order>
+
+@{
+    ViewData["Title"] = "Orders page";
+}
+
+<h1 class="yourOrdersHeading">Your Orders</h1>
+
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Product ID</th>
+            <th>Status</th>
+            <th>Address</th>
+            <th>Payment Method</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.orderID</td>
+                <td>@order.productID</td>
+                <td>@order.orderStatus</td>
+                <td>@order.orderAddress</td>
+                <td>@order.paymentMethod</td>
+                <td>@order.orderDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
